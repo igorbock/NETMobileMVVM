@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:MauiCRUD.Navigator"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="MauiCRUD.Pages.frmPessoa"
+             Title="Cadastro de Pessoa">
+    <VerticalStackLayout>
+        <dxe:TextEdit Text="{Binding CurrentItem.Nome}"
+                      LabelText="Nome"/>
+        <dxe:DateEdit Date="{Binding CurrentItem.Nascimento}"
+                      LabelText="Nascimento"/>
+        <dxe:TextEdit Text="{Binding CurrentItem.CPF}"
+                      LabelText="CPF"/>
+        <dxe:TextEdit Text="{Binding CurrentItem.RG}"
+                      LabelText="RG"/>
+        <dx:DXButton Content="Novo"
+                     Margin="0,5,0,5"
+                     Command="{Binding CreateCommand}"
+                     IsVisible="{Binding ButtonInsertVisible}"/>
+        <dx:DXButton Content="Editar"
+                     Margin="0,5,0,5"
+                     Command="{Binding UpdateCommand}"
+                     IsVisible="{Binding ButtonEditVisible}"/>
+        <dx:DXButton Content="Excluir"
+                     Margin="0,5,0,5"
+                     Command="{Binding DeleteCommand}"
+                     IsVisible="{Binding ButtonDeleteVisible}"/>
+        <dx:DXButton Content="Fechar"
+                     Margin="0,5,0,5"
+                     IsVisible="{Binding ButtonCloseVisible}"/>
+        <dx:DXButton Content="Salvar"
+                     Margin="0,5,0,5"
+                     Command="{Binding SaveCommand}"
+                     IsVisible="{Binding ButtonSaveVisible}"/>
+        <dx:DXButton Content="Cancelar"
+                     Margin="0,5,0,5"
+                     Command="{Binding CancelCommand}"
+                     IsVisible="{Binding ButtonCancelVisible}"/>
+
+        <dx:DataGridView ItemsSource="{Binding ListTypeT}"
+                         SelectedItem="{Binding CurrentItem}">
+            <dx:DataGridView.Columns>
+                <dx:TextColumn FieldName="Nome"/>
+                <dx:TextColumn FieldName="CPF"/>
+                <dx:TextColumn FieldName="RG"/>
+            </dx:DataGridView.Columns>
+        </dx:DataGridView>
+    </VerticalStackLayout>
+</ContentPage>

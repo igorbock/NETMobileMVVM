@@ -1,0 +1,3 @@
+[submodule "NETLibMVVM"]
+	path = NETLibMVVM
+	url = https://github.com/igorbock/NETLibMVVM.git
