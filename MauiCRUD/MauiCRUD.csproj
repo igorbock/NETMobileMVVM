@@ -73,7 +73,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\VisualBasicLib\VisualBasicLib.vbproj" />
+	  <ProjectReference Include="..\NETLibMVVM\VisualBasicLib\VisualBasicLib.vbproj" />
 	</ItemGroup>
 
 	<ItemGroup>
