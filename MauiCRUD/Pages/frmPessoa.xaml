@@ -3,6 +3,7 @@
              xmlns:dx="http://schemas.devexpress.com/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:MauiCRUD.Navigator"
+             xmlns:vm="clr-namespace:VisualBasicLib.ViewModels;assembly=VisualBasicLib"
              xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="MauiCRUD.Pages.frmPessoa"
              Title="Cadastro de Pessoa">

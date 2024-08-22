@@ -1,14 +1,15 @@
-using MauiCRUD.Navigator;
+using EntityFrameworkLib.Models;
+using VisualBasicLib.Abstracts;
+using VisualBasicLib.Interfaces;
 using VisualBasicLib.ViewModels;
 
 namespace MauiCRUD.Pages;
 
 public partial class frmPessoa : ContentPage
 {
-	public frmPessoa()
+	public frmPessoa(RepositoryAbstract<Pessoa> pessoaRepository, RepositoryAbstract<Endereco> enderecoRepository, INavigationManager navigator)
 	{
         InitializeComponent();
-		var navigationManager = new NavigatorMAUI();
-		BindingContext = new PessoaViewModel(navigationManager);
+		BindingContext = new PessoaViewModel(pessoaRepository, navigator, enderecoRepository);
 	}
 }

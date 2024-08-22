@@ -1,4 +1,6 @@
-﻿using MauiCRUD.Navigator;
+﻿using EntityFrameworkLib.Models;
+using VisualBasicLib.Abstracts;
+using VisualBasicLib.Interfaces;
 using VisualBasicLib.ViewModels;
 
 namespace MauiCRUD
@@ -7,10 +9,10 @@ namespace MauiCRUD
     {
         int count = 0;
 
-        public MainPage()
+        public MainPage(RepositoryAbstract<Pessoa> pessoaRepository, RepositoryAbstract<Endereco> enderecoRepository, INavigationManager navigator)
         {
             InitializeComponent();
-            BindingContext = new PessoaViewModel(new NavigatorMAUI());
+            BindingContext = new PessoaViewModel(pessoaRepository, navigator, enderecoRepository);
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
