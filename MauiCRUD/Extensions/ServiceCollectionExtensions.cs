@@ -12,7 +12,11 @@ public static class ServiceCollectionExtensions
         foreach (var binding in bindings)
         {
             var serviceType = binding.Service;
-            services.AddScoped(serviceType, provider => kernel.GetService(serviceType)!);
+            Func<IServiceProvider, object> implementation = provider => kernel.GetService(serviceType)!;
+
+            var serviceName = kernel.GetService(serviceType)?.GetType().Name ?? implementation.Method.Name;
+
+            services.AddScoped(serviceType, implementation);
         }
     }
 }
