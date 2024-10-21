@@ -7,9 +7,9 @@ namespace MauiCRUD.Pages;
 
 public partial class frmPessoa : ContentPage
 {
-	public frmPessoa(RepositoryAbstract<Pessoa> pessoaRepository, RepositoryAbstract<Endereco> enderecoRepository, INavigationManager navigator)
+	public frmPessoa(TypeTViewModel<Pessoa> viewModel)
 	{
-        InitializeComponent();
-		BindingContext = new PessoaViewModel(pessoaRepository, navigator, enderecoRepository);
+		InitializeComponent();
+		BindingContext = viewModel;
 	}
 }

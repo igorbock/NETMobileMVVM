@@ -36,11 +36,11 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
         Routing.RegisterRoute("endereco", typeof(frmEndereco));
+        builder.Services.AddScoped<INavigationManager, NavigatorMAUI>();
 
         builder.Services.AddNinjectModules([new NinjectDI()]);
 
         builder.Services.AddSingleton<frmPessoa>();
-        builder.Services.AddScoped<INavigationManager, NavigatorMAUI>();
 
         return builder.Build();
     }
